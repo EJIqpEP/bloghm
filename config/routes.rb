@@ -1,5 +1,11 @@
 Elcoding::Application.routes.draw do
-  resources :posts
+
+  resources :posts do
+    resources :paintings
+    resources :comments
+  end
+
+  resources :tags
 
   post "markdown/preview"
 

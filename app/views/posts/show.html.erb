@@ -1,30 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+<h1><%= @post.title %></h1>
 
-<p>
-  <b>Body:</b>
-  <%= markdown(@post.body) %>
-</p>
+<%= @post.published_at.strftime('%d.%m.%y в %H:%M') %>
 
-<p>
-  <b>Slug:</b>
-  <%= @post.slug %>
-</p>
+<%= markdown(@post.body) %>
 
-<p>
-  <b>Published:</b>
-  <%= @post.published %>
-</p>
+<b>Tags:</b>
+<% @post.tags.any? %>
+  <% @post.tags.each do |tag| %>
+  <%= link_to tag.name, tag %>
+<% end %>
 
-<p>
-  <b>Published at:</b>
-  <%= @post.published_at %>
-</p>
+<div class = "comments">
+  <% if (@post.comments.any?) %>
+    <h2>Комментарии</h2>
+    <% @post.comments.each do |comment| %>
+      <div class = "comment">
+        <div class = "gravatar"><%= gravatar_for comment.email %></div>
+        <div><b>Author:</b> <%= comment.name  %></div>
+        <div><%= comment.created_at.strftime('%d.%m.%y в %H:%M') %></div>
+        <div><%= comment.content %></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<%= render 'comments/form' %>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= render "sidebar" %>

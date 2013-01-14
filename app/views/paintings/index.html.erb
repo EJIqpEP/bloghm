@@ -1,0 +1,23 @@
+<h1>Listing paintings</h1>
+
+<table>
+  <tr>
+    <th>Post</th>
+    <th>Name</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @paintings.each do |painting| %>
+  <tr>
+    <td><%= painting.post_id %></td>
+    <td><%= painting.name %></td>
+    <td><%= painting.image %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

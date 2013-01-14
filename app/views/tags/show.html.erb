@@ -1,3 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @tag.name %></h1>
+
 <% @posts.each do |post| %>
   <div class ="post_teaser">
     <div class = "teaser_title"><%= link_to post.title, post %></div>
@@ -14,9 +18,8 @@
   <div class = "clear"></div>
 <% end %>
 
-<%= render "sidebar" %>
+<%= render "posts/sidebar" %>
 
 <% content_for :under_content do %>
   <%= paginate @posts %>
 <% end %>
-

@@ -5,10 +5,42 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!--[if IE]>
+    <style>
+      body {
+      height:auto !important;
+      min-height:100%;
+      height:100%;
+      position:relative;
+      }
+    </style>
+  <![endif]-->
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="page_bg">
+    <div class = "wrap">
+      <div class = "header">
+        <div class = "sitename">
+          <%= link_to 'Alexander Kochergin', root_path %>
+        </div>
+        <div class = "slogan">
+          From Junior to Senior in Ruby and Rails
+        </div>
+      </div>
+      <div class = "container">
+        <%= yield %>
+      </div>
+      <div class = "sidebar">
+        <%= yield :sidebar %>
+      </div>
+    </div>
+    <div class = "under_content">
+      <%= yield :under_content %>
+    </div>
+  </div>
+    <div class = "footer">
+      <p>Банальные фразы, такие как "Все права защищены" решил не писать, поэтому футер пустой</p>
+    </div>
+</div>
 </body>
 </html>

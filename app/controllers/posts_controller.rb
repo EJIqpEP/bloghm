@@ -1,7 +1,8 @@
 # encoding: utf-8
 class PostsController < ApplicationController
+  before_filter :most_recent_posts
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(10)
   end
 
   def show
@@ -38,6 +39,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path, :notice => "Post was deleted"
+  end
+
+  def most_recent_posts
+    @most_recent_posts ||= Post.limit(5)
   end
 end
 

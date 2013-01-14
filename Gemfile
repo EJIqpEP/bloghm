@@ -9,6 +9,9 @@ gem 'pg'
 gem 'simple_form'
 gem "redcarpet"
 gem 'markitup-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'kaminari'
 
 # Gems used only for assets and not required
 # in production environments by default.

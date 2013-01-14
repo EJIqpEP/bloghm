@@ -3,14 +3,26 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
+    <%= f.input :tag_names %>
     <%= link_to @post.title, @post %>
     <%= f.input :body, :input_html => { :id => 'post_content'  } %>
-    <%= f.input :slug %>
     <%= f.input :published %>
     <%= f.input :published_at %>
   </div>
 
+
+<div id = "paintings">
+  <% for painting in @post.paintings %>
+    <div class = "painting">
+      <%= image_tag painting.image_url(:thumb).to_s  %>
+      <div><%= link_to "Delete", [@post, painting] , method: :delete, :remote => true, :class => "remove" %></div>
+    </div>
+  <% end %>
+</div>
+
+  <br>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
