@@ -1,12 +1,9 @@
-<%= simple_form_for [@post, @post.paintings.build], :html => { :multipart => true } do |f| %>
-  <%= f.error_notification %>
+<%= form_for [@post, @post.paintings.build] do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :post_id, :as => :hidden %>
-    <%= f.input :image, :multiple => true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.hidden_field :post_id, :as => :hidden %>
+    <%= f.label :image, "Upload paintings:" %>
+    <br>
+    <%= f.file_field :image, multiple: true, name: "painting[image]" %>
   </div>
 <% end %>

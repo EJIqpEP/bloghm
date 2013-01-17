@@ -11,9 +11,9 @@
   </div>
 
 
-<div id = "paintings">
-  <% for painting in @post.paintings %>
-    <div class = "painting">
+<div class = "paintings">
+  <% @post.paintings.each_with_index do |painting| %>
+    <div class = "<%= "painting#{painting.id}" %>">
       <%= image_tag painting.image_url(:thumb).to_s  %>
       <div><%= link_to "Delete", [@post, painting] , method: :delete, :remote => true, :class => "remove" %></div>
     </div>

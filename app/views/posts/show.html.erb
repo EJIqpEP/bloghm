@@ -4,13 +4,13 @@
 
 <%= @post.published_at.strftime('%d.%m.%y в %H:%M') %>
 
-<%= markdown(@post.body) %>
-
 <b>Tags:</b>
 <% @post.tags.any? %>
   <% @post.tags.each do |tag| %>
   <%= link_to tag.name, tag %>
 <% end %>
+<div><%= markdown(@post.body) %></div>
+
 
 <div class = "comments">
   <% if (@post.comments.any?) %>

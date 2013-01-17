@@ -1,0 +1,4 @@
+<div class = "<%= "painting#{painting.id}" %>">
+  <%= link_to image_tag(painting.image_url(:thumb)), [@post, painting] %>
+  <div><%= link_to "Delete", [@post, painting] , method: :delete, :remote => true, :class => "remove" %></div>
+</div>
