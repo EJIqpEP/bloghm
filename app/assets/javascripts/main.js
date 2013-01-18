@@ -34,3 +34,4 @@ $(document).ready(function() {
     $('.markItUpEditor').insertAtCaret("![image]("+image + ")");
   });
 });
+
