@@ -29,7 +29,7 @@ $(document).ready(function() {
     }
   });
 
- $('.paintings img').live("click", function() {
+  $('.paintings img').live("click", function() {
     image = $(this).attr('src');
     $('.markItUpEditor').insertAtCaret("![image]("+image + ")");
   });
