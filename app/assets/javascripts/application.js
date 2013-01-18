@@ -15,3 +15,4 @@
 //= require jquery-fileupload/basic
 //= require_tree .
 //= require markitup
+//= require main

@@ -10,8 +10,8 @@ html{
   padding-bottom: 50px;
 }
 a{
-  background: none !important;
-  &:hover:visited{ background: none !important; }
+  //background: none !important;
+  //&:hover:visited{ background: none !important; }
 }
 body{
   background: #eeeeee !important;
@@ -235,4 +235,8 @@ body{
 .comment .gravatar {
   float: left;
   margin-right: 10px;
+}
+
+.paintings img {
+  width: 200px;
 }
