@@ -1,1 +1,8 @@
-<%= comment.content %>
+<% count = @post.comments.count %>
+<div class = "comment" id = "comment-<%= count %>">
+  <div class = "gravatar"><%= gravatar_for comment.email %></div>
+  <div class = "number"><%= link_to "##{count}", post_path(@post, :anchor => "comment-#{count}") %></div>
+  <div class = "comment-author"><%= comment.name %></div>
+  <div class = "comment-date"><%= comment.created_at.strftime("%d.%m.%y в %H:%M") %></div>
+  <div class = "comment-text"><%= comment.content %></div>
+</div>

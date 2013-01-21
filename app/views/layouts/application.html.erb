@@ -19,6 +19,12 @@
 <body>
   <div id="page_bg">
     <div class = "wrap">
+      <div class = "auth">
+        <% if user_signed_in? %>
+          <%= current_user.email %>
+          <%= link_to "Logout", logout_path %>
+        <% end %>
+      </div>
       <div class = "header">
         <div class = "sitename">
           <%= link_to 'Alexander Kochergin', root_path %>

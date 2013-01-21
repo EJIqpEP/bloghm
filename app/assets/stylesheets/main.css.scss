@@ -11,7 +11,7 @@ html{
 }
 a{
   //background: none !important;
-  //&:hover:visited{ background: none !important; }
+  &:hover:visited{ background: none !important; }
 }
 body{
   background: #eeeeee !important;
@@ -208,11 +208,17 @@ body{
 
 .comment_form{
   margin-top: 20px;
-  h3{
-    margin-bottom: 10px;
+  & input {
+    font-size: 14px;
   }
-  .label{
+  h2{
     margin-bottom: 10px;
+    font-weight: 200;
+    font-size: 23px;
+    line-height: 1.1;
+  }
+  label{
+    display: none;
   }
   #comment_name{
     width: 200px;
@@ -237,6 +243,108 @@ body{
   margin-right: 10px;
 }
 
+.comments {
+  margin-top: 20px;
+  & h2 {
+    font-weight: 200;
+    font-size: 23px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+  & .comment {
+    margin-bottom: 25px;
+    & .number {
+      float:right;
+      font-size: 15px;
+      line-height: 1.4;
+      & a {
+        color: #adadad;
+        background: none !important;
+      }
+      &:hover {
+        color: #000000 !important;
+      }
+    }
+    & .comment-text {
+      clear: both;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    & .comment-author {
+      font-size: 1.2em;
+      color: #383838;
+    }
+    & .comment-date{
+      font-size: 0.9em;
+      color: #adadad;
+    }
+  }
+
+}
 .paintings img {
   width: 200px;
+}
+
+code, .highlight pre {
+  border: 1px solid #dcdcdc;
+  background: #f7f6f5;
+  font-size: 17px;
+  line-height: 21px;
+  display:block;
+  padding: 5px;
+}
+
+.highlight pre {
+  font-size: 15px;
+}
+
+.highlight {
+  margin-bottom: 10px;
+}
+.content-info {
+  font-size: 14px;
+  & .post-date {
+    color: #adadad;
+    font-size: 12px;
+  }
+  & .post-tags {
+    & a {
+      background: none;
+      &:hover {
+        color: #cc0000;
+      }
+    }
+  }
+}
+.content {
+  a {
+    text-decoration: none;
+    color: #547091 !important;
+    &:hover {
+      background: none;
+      text-decoration: underline;
+      color: #cc0000;
+    }
+  }
+  ul {
+    margin-left: 20px;
+  }
+  & p, ul {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #353535;
+  }
+  margin-top: 20px;
+  & h2 {
+    font-weight: 200;
+    font-size: 23px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+}
+h1 {
+  font-weight: 200;
+  color: #555;
+  font-size: 30px;
 }

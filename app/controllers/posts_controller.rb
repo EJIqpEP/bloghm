@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
+    @post.user_id = current_user.id
     if @post.save
         redirect_to edit_post_path(@post.slug), notice: 'Post was successfully created.'
     else

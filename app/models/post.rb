@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :tags, :through => :taggings
   has_many :taggings, :dependent => :destroy
+  belongs_to :user
 
   validates_presence_of :title, :body, :slug
   #validates_uniqueness_of :title, :slug
