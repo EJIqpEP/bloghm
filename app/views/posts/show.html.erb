@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% meta :title => "#{@post.title} - Elcoding", :description => @post.meta_desc %>
 <h1><%= @post.title %></h1>
 <div class = "content-info">
   Автор: <b><%= @post.user.name %></b>

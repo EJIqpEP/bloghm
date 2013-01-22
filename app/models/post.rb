@@ -2,7 +2,7 @@
 class Post < ActiveRecord::Base
   include Translit
 
-  attr_accessible :body, :published, :published_at, :title
+  attr_accessible :body, :published, :published_at, :title, :meta_desc
 
   has_many :paintings, :dependent => :destroy
   has_many :comments, :dependent => :destroy

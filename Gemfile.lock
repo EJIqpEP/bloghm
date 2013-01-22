@@ -73,6 +73,7 @@ GEM
       activerecord (~> 3.1)
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
+    metamagic (2.0.4)
     mime-types (1.19)
     mini_magick (3.4)
       subexec (~> 0.2.1)
@@ -152,6 +153,7 @@ DEPENDENCIES
   kaminari
   markitup-rails
   meta_search
+  metamagic
   mini_magick
   nokogiri
   pg

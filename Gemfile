@@ -17,6 +17,7 @@ gem 'pygments.rb'
 gem 'nokogiri'
 gem 'devise'
 gem 'meta_search'
+gem 'metamagic'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
