@@ -11,7 +11,10 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :title, :body, :slug
-  #validates_uniqueness_of :title, :slug
+
+  #scope
+  scope :recent, lambda { order("published_at DESC")  }
+  scope :published, lambda { recent.where('published IS TRUE AND published_at <= ?', Time.zone.now)  }
 
   #slug
   before_validation :generate_slug

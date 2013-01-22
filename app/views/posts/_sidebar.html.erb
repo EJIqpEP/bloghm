@@ -1,8 +1,9 @@
 <% content_for :sidebar do %>
 
-  <h2>Sidebar</h2>
   <div class = "sitebar_search">
-  <h2>Поиск:</h2>
+    <%= form_for @search, :url => posts_path, :html => {:method => :get} do |f| %>
+      <%= f.text_field :title_or_body_contains, :placeholder => 'Поиск статей' %>
+    <% end %>
   </div>
 
   <div class = "recent_posts">

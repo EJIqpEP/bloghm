@@ -1,11 +1,16 @@
 # encoding: utf-8
 class PostsController < ApplicationController
   before_filter :most_recent_posts
+  before_filter :published, :only => [:show]
+  before_filter :authenticate_user!, except: [:index, :show]
   def index
-    @posts = Post.page(params[:page]).per(10)
+    @search = Post.published.search(params[:search])
+    @posts = Post.published.page(params[:page]).per(10)
+    @posts = @search.page(params[:page]).per(10)
   end
 
   def show
+    @search = Post.search(params[:search])
     @post = Post.find(params[:id])
   end
 
@@ -43,8 +48,16 @@ class PostsController < ApplicationController
   end
 
   def most_recent_posts
-    @most_recent_posts ||= Post.limit(5)
+    @most_recent_posts ||= Post.published.limit(5)
   end
+
+  private
+
+    def published
+      post = Post.find(params[:id])
+      redirect_to(root_path) unless (post.published == true and post.published_at <= Time.zone.now) or
+                                    (signed_in?)
+    end
 end
 
 

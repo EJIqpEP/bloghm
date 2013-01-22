@@ -14,6 +14,8 @@ Elcoding::Application.routes.draw do
 
   resources :tags
 
+  resources :admin
+
   post "markdown/preview"
 
   root :to => 'posts#index'

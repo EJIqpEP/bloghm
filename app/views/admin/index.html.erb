@@ -1,0 +1,26 @@
+<div class = "admin-links"><%= link_to "Posts", admin_index_path %></div>
+<% @posts.each do |post| %>
+  <div class ="post_teaser">
+    <div class = "teaser_title">
+      <%= link_to post.title, post %>
+      <span class = "edit-post"><%= link_to "Edit", edit_post_path(post) %></span>
+    </div>
+    <div class = "teaser_about">
+      <div class = "teaser_date"><%= l post.created_at, :format => :short %></div>
+      <div class = "teaser_tags">
+        <% post.tags.any? %>
+          <% post.tags.each do |tag| %>
+          <li><%= link_to tag.name, tag %></li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class = "clear"></div>
+<% end %>
+
+<%= render "posts/sidebar" %>
+
+<% content_for :under_content do %>
+  <%= paginate @posts %>
+<% end %>
+
