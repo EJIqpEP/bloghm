@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_filter :most_recent_posts
   before_filter :published, :only => [:show]
   before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :tag_cloud, :only => [:index, :show]
   def index
     @search = Post.published.search(params[:search])
     @posts = Post.published.page(params[:page]).per(10)

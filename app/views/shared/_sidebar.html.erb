@@ -1,0 +1,32 @@
+<% content_for :sidebar do %>
+
+  <div class = "sitebar_search">
+    <%= form_for @search, :url => posts_path, :html => {:method => :get} do |f| %>
+      <%= f.text_field :title_or_body_contains, :placeholder => 'Поиск статей' %>
+    <% end %>
+  </div>
+
+  <% if @tag_cloud %>
+    <div class = "tag-cloud">
+      <h2>Облако тегов</h2>
+      <ul>
+        <% @tag_cloud.each do | size, tag | %>
+          <li class = "size-<%= size %>"><%= link_to tag.name, tag_path(tag) %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class = "recent_posts">
+    <h2>Последние статьи</h2>
+    <ul>
+      <% @most_recent_posts.each do |post| %>
+      <li><%= link_to post.title, post %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+<% end %>
+
