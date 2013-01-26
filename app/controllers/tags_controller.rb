@@ -4,7 +4,8 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find_by_slug(params[:id])
     @posts = @tag.posts.page(params[:page]).per(10)
-    @most_recent_posts ||= Post.limit(5)
+    @most_recent_posts ||= Post.published.limit(5)
+    @search = Post.published.search(params[:search])
   end
 
 end

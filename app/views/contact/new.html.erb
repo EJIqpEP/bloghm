@@ -1,0 +1,13 @@
+<h1>Обратная связь</h1>
+
+<%= form_for @message, :url => contact_path, :html => {class: "message_form"} do |form| %>
+  <div><%= form.text_field :name, placeholder: "Имя" %></div>
+  
+  <div><%= form.text_field :email, placeholder: "Email" %></div>
+  <div><%= form.text_field :subject, placeholder: "Тема письма" %></div>
+  <div><%= form.text_area :content %></div>
+  <div class = "feedback-submit"><%= form.submit "Отправить" %></div>
+
+<% end %>
+
+<%= render "shared/sidebar" %>

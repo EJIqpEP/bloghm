@@ -194,6 +194,9 @@ body{
     font-weight: 200;
     font-size: 23px;
   }
+  ul {
+    margin-left: 12px;
+  }
   li{
     list-style: none !important;
     padding: 8px;
@@ -221,6 +224,9 @@ body{
 
 .comment_form{
   margin-top: 20px;
+  *:focus {
+    outline: none;
+  }
   & input {
     font-size: 14px;
   }
@@ -230,8 +236,8 @@ body{
     font-size: 23px;
     line-height: 1.1;
   }
-  label{
-    display: none;
+  .name {
+    margin-bottom: 10px;
   }
   #comment_name{
     width: 200px;
@@ -273,9 +279,9 @@ body{
       & a {
         color: #adadad;
         background: none !important;
-      }
-      &:hover {
-        color: #000000 !important;
+        &:hover {
+          color: #cc0000 !important;
+        }
       }
     }
     & .comment-text {
@@ -401,6 +407,14 @@ h1 {
 
 .tag-cloud {
   list-style: none;
+  & a {
+    text-decoration: none;
+    &:hover {
+      color: #cc0000;
+      text-decoration: underline;
+    }
+
+  }
   & h2 {
     margin-bottom: 5px;
     font-weight: 200;
@@ -408,6 +422,7 @@ h1 {
   }
   & li {
     display: inline-block;
+    margin-right: 5px;
   }
   & .size-4 {
     font-size: 150%;
@@ -420,5 +435,48 @@ h1 {
   }
   & .size-1 {
     font-size: 90%;
+  }
+}
+
+.main-menu{
+  margin-top: 20px;
+  a {
+    text-decoration: none;
+    font-size: 130%;
+    &:hover {
+      text-decoration: underline;
+      color: #cc0000;
+    }
+  }
+  h2 {
+    margin-bottom: 5px;
+    font-weight: 200;
+    font-size: 23px;
+  }
+  ul {
+    list-style: none;
+    margin-left: 20px;
+  }
+}
+
+.message_form {
+  #message_name, #message_email, #message_subject, #message_content {
+    font-size: 14px;
+  }
+  div {
+    margin-bottom: 10px;
+  }
+  .feedback-submit input {
+    font-size: 18px;
+  }
+}
+
+.field_with_errors {
+  background-color: transparent !important;
+  label {
+    margin-left: 10px;
+  }
+  #comment_name, #comment_email, #comment_content {
+    border: 2px solid #cc0000;
   }
 }

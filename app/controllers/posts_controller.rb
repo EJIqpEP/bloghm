@@ -56,8 +56,7 @@ class PostsController < ApplicationController
 
     def published
       post = Post.find(params[:id])
-      redirect_to(root_path) unless (post.published == true and post.published_at <= Time.zone.now) or
-                                    (signed_in?)
+      redirect_to(root_path) unless (post.published == true and post.published_at <= Time.zone.now) or (signed_in?)
     end
 end
 

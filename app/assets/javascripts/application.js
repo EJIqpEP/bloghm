@@ -16,3 +16,4 @@
 //= require_tree .
 //= require markitup
 //= require main
+//= require rails.validations

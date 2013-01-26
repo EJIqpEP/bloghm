@@ -18,8 +18,13 @@ gem 'nokogiri'
 gem 'devise'
 gem 'meta_search'
 gem 'metamagic'
-# Gems used only for assets and not required
-# in production environments by default.
+gem 'active_attr'
+gem 'client_side_validations'
+
+group :development do
+  gem 'thin'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -39,10 +44,11 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+ gem 'capistrano'
+ gem 'rvm-capistrano'
 
 # To use debugger
 # gem 'debugger'

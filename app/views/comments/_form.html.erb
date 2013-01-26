@@ -1,12 +1,10 @@
 <div class = "comment_form">
   <h2>Добавить комментарий</h2>
-  <%= simple_form_for [@post, @post.comments.build], :remote => true do |f| %>
-     <%= f.error_notification %>
-  
+  <%= form_for [@post, @post.comments.build], :validate => true, :remote => true do |f| %>
     <div class="form-inputs">
-      <%= f.input :name, :placeholder => 'Имя' %>
-      <%= f.input :email, :placeholder => 'Почта' %>
-      <%= f.input :content %>
+      <div class = "name"><%= f.text_field :name, :placeholder => 'Имя' %></div>
+      <div class = "email"><%= f.email_field :email, :placeholder => 'Почта' %></div>
+      <div class = "content"><%= f.text_area :content %></div>
     </div>
   
     <div class="form-actions">

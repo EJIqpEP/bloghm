@@ -1,5 +1,8 @@
 Elcoding::Application.routes.draw do
 
+  resources :pages
+
+
   devise_for :users do
     get '/sign_out' => 'devise/sessions#destroy'
     get '/login' => 'devise/sessions#new'
@@ -17,6 +20,11 @@ Elcoding::Application.routes.draw do
   resources :admin
 
   post "markdown/preview"
+
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+
+  match 'about' => 'pages#show', :as => 'about', :id => 'ob-avtore-bloga'
 
   root :to => 'posts#index'
 
