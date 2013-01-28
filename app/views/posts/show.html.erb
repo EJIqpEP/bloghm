@@ -12,6 +12,10 @@
     <% end %>
   </span>
 </div>
+<% if signed_in? %>
+  <%= link_to "Edit", edit_post_path(@post) %>
+  <%= link_to "Delete", post_path(@post), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+<% end %>
 <div class = "content"><%= markdown(@post.body) %></div>
 
 
@@ -25,7 +29,10 @@
         <div class = "comment-author"><%= comment.name  %></div>
         <div class = "comment-date"><%= comment.created_at.strftime('%d.%m.%y в %H:%M') %></div>
         <% if signed_in? %>
-          <div class = "edit-comment"><%= link_to "Edit", edit_post_comment_path(@post, comment) %></div>
+          <div class = "edit-comment">
+            <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
+            <%= link_to "Delete", post_comment_path(@post, comment), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+          </div>
         <% end %>
         <div class = "comment-text"><%= comment.content %></div>
       </div>

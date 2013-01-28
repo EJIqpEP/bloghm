@@ -1,6 +1,5 @@
 Elcoding::Application.routes.draw do
 
-  resources :pages
 
 
   devise_for :users do
@@ -15,9 +14,17 @@ Elcoding::Application.routes.draw do
     resources :comments
   end
 
+  resources :pages do
+    resources :paintings
+  end
+
   resources :tags
 
-  resources :admin
+  resources :admin do
+    collection do
+      get 'comments'
+    end
+  end
 
   post "markdown/preview"
 

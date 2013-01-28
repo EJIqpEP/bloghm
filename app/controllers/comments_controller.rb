@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+
+  before_filter :authenticate_user!, except: [:index, :show]
+
   # GET /comments
   # GET /comments.json
   def index
@@ -69,12 +72,10 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @comment = Comment.find(params[:id])
+    @post = Post.find_by_slug(params[:post_id])
+    @comment = @post.comments.find(params[:id])
     @comment.destroy
 
-    respond_to do |format|
-      format.html { redirect_to comments_url }
-      format.json { head :no_content }
-    end
+    redirect_to post_path(@post), notice: 'Comment was successfully deleted'
   end
 end

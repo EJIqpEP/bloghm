@@ -3,7 +3,8 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :content %>
+    <%= link_to @page.title, @page %>
+    <%= f.input :content, :input_html => { :id => 'post_content'  } %>
     <%= f.input :published %>
     <%= f.input :published_at %>
   </div>

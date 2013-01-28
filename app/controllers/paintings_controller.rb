@@ -1,5 +1,7 @@
 class PaintingsController < ApplicationController
 
+  before_filter :authenticate_user!, except: [:index, :show]
+
   def create
     @post = Post.find_by_slug(params[:post_id])
     @painting = @post.paintings.create(params[:painting])

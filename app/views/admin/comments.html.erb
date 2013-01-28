@@ -1,0 +1,21 @@
+
+<div class = "admin-links">
+  <%= link_to "Posts", admin_index_path %>
+  <%= link_to 'Comments', admin_comments_path %>
+</div>
+<% @comments.each do |comment| %>
+  <div class ="post_teaser">
+    <div class = "teaser_title">
+      <span><%= comment.content %></span>
+      <span><b>email:</b> <%= comment.email %></span>
+      <span><b>ip:</b> <%= comment.ip %></span>
+      <span><%= link_to post_path(comment.post_id), post_path(comment.post_id) %></span>
+    </div>
+  <div class = "clear"></div>
+<% end %>
+
+
+<% content_for :under_content do %>
+  <%= paginate @comments %>
+<% end %>
+

@@ -8,6 +8,10 @@ class AdminController < ApplicationController
     @posts = @search.page(params[:page]).per(10)
   end
 
+  def comments
+    @comments = Comment.order('created_at desc').page(params[:page]).per(10)
+  end
+
   def most_recent_posts
     @most_recent_posts ||= Post.published.limit(5)
   end

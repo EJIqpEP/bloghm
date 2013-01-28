@@ -6,8 +6,6 @@ class Page < ActiveRecord::Base
   validates_presence_of :title, :content
   validates_uniqueness_of :title
 
-  has_many :paintings, :dependent => :destroy
-
   #scopes
   scope :published, lambda { where('published IS TRUE AND published_at <= ?', Time.zone.now)  }
 
