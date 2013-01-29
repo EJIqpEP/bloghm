@@ -1,7 +1,7 @@
 
 <div class = "admin-links">
   <%= link_to "Posts", admin_index_path %>
-  <%= link_to 'Comments', admin_comments_path %>
+  <%= link_to 'Comments', comments_admin_index_path  %>
 </div>
 <% @comments.each do |comment| %>
   <div class ="post_teaser">
