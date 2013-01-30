@@ -480,3 +480,30 @@ h1 {
     border: 2px solid #cc0000;
   }
 }
+
+.page-content {
+  ul {
+    margin-left: 20px;
+  }
+  a {
+    text-decoration: none;
+    color: #547091 !important;
+    &:hover {
+      background: none;
+      text-decoration: underline;
+      color: #cc0000;
+    }
+  }
+  h2 {
+    font-weight: 200;
+    font-size: 23px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  p, ul {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #353535;
+  }
+}

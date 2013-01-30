@@ -1,12 +1,11 @@
 Elcoding::Application.routes.draw do
 
+  devise_for :users
 
-
-  devise_for :users do
-    get '/sign_out' => 'devise/sessions#destroy'
+  devise_scope :user do
     get '/login' => 'devise/sessions#new'
+    post '/login' => 'devise/sessions#create'
     get '/logout' => 'devise/sessions#destroy'
-    get '/edit_profile' => 'devise/registrations#edit'
   end
 
   resources :posts do

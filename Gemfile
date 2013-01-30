@@ -20,11 +20,18 @@ gem 'meta_search'
 gem 'metamagic'
 gem 'active_attr'
 gem 'client_side_validations'
+gem 'rb-fsevent'
 
 group :development do
   gem 'thin'
 end
-
+gem "rspec-rails", :group => [:test, :development]
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem 'database_cleaner'
+end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

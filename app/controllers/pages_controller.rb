@@ -2,8 +2,13 @@
 class PagesController < ApplicationController
 
   before_filter :published, :only => [:show]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :tag_cloud, :only => [:index, :show]
+  before_filter :most_recent_posts
+
   def show
     @page = Page.find(params[:id])
+    @search = Post.published.search(params[:search])
   end
 
   def new
@@ -39,6 +44,10 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     @page.destroy
     redirect_to pages_path, :notice => "Страница удалена"
+  end
+
+  def most_recent_posts
+    @most_recent_posts ||= Post.published.limit(5)
   end
 
   def published
