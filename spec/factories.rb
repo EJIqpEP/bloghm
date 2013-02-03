@@ -4,4 +4,9 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
   end
+
+  factory :post do
+    title "Deploying through ssh"
+    body "This is post about ssh"
+  end
 end

@@ -13,7 +13,8 @@ module ApplicationHelper
       :autolink => true,
       :strikethrough => true,
       :lax_html_blocks => true,
-      :superscript => true
+      :superscript => true,
+      :with_toc_data => true
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end

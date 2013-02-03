@@ -6,7 +6,6 @@
       <%= f.input :title %>
       <%= f.input :tag_names %>
       <%= link_to @post.title, @post %>
-      <%= link_to "Delete", post_path(@post), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
       <%= f.input :body, :input_html => { :id => 'post_content'  } %>
       <div class = "meta"><%= f.input :meta_desc %></div>
       <%= f.input :published %>
@@ -24,6 +23,9 @@
   <% end %>
 </div>
 
+  <% if !@post.new_record? %>
+    <div><%= link_to "Delete Post", @post, :method => 'delete', :data => { :confirm => 'Are you sure?' } %></div>
+  <% end %>
   <br>
   <div class="form-actions">
     <%= f.button :submit %>

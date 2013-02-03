@@ -10,13 +10,13 @@ class PostsController < ApplicationController
     @posts = @search.page(params[:page]).per(10)
   end
 
+  def new
+    @post = Post.new
+  end
+
   def show
     @search = Post.search(params[:search])
     @post = Post.find(params[:id])
-  end
-
-  def new
-    @post = Post.new
   end
 
   def edit
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path, :notice => "Post was deleted"
+    redirect_to root_path, :notice => "Post was deleted"
   end
 
   def most_recent_posts
