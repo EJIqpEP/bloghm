@@ -10,6 +10,7 @@ set :user, "ejiqpep"
 set :deploy_to, "/home/sites/elcoding.com/www/"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :shared_children, shared_children + %w{public/uploads}
 
 set :scm, "git"
 set :repository, "git@github.com:EJIqpEP/bloghm.git"
