@@ -6,7 +6,7 @@ FactoryGirl.define do
   end
 
   factory :post do
-    title "Deploying through ssh"
-    body "This is post about ssh"
+    title "Deploying through sshii"
+    body "This is post about sshii"
   end
 end

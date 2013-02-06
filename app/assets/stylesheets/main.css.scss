@@ -310,10 +310,12 @@ code, .highlight pre {
   font-size: 17px;
   line-height: 21px;
   padding: 5px;
+  overflow-x: scroll;
 }
 
 .highlight pre {
   font-size: 15px;
+  padding: 10px;
 }
 
 .highlight {
@@ -344,10 +346,10 @@ code, .highlight pre {
       color: #cc0000;
     }
   }
-  ul {
+  ul, ol {
     margin-left: 20px;
   }
-  & p, ul {
+  & p, ul, ol {
     font-size: 15px;
     line-height: 1.4;
     color: #353535;

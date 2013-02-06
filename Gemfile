@@ -34,6 +34,7 @@ group :test do
   gem "capybara"
   gem "guard-rspec"
   gem 'database_cleaner'
+  gem 'launchy'
 end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
