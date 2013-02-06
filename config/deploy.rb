@@ -16,7 +16,6 @@ set :scm, "git"
 set :repository, "git@github.com:EJIqpEP/bloghm.git"
 set :branch, "master"
 
-
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
