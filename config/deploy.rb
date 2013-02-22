@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-server "ejiqpepserver", :web, :app, :db, primary: true
+server "vq7server", :web, :app, :db, primary: true
 
 set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :system
