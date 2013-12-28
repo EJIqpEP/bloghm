@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-server "vq7server", :web, :app, :db, primary: true
+server "vq12server", :web, :app, :db, primary: true
 
 set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :system
@@ -22,7 +22,7 @@ ssh_options[:forward_agent] = true
 after "deploy", "deploy:cleanup"
 
 
-namespace :deploy do 
+namespace :deploy do
   %w[start stop restart].each do |command|
   	desc "#{command} unicorn server"
   	task command, roles: :app, except: {no_release: true} do
