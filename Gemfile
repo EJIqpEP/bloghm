@@ -29,6 +29,7 @@ group :development do
   gem 'meta_request'
 end
 gem "rspec-rails", :group => [:test, :development]
+gem "pry-rails", :group => [:test, :development]
 group :test do
   gem "factory_girl_rails"
   gem "capybara"

@@ -45,15 +45,19 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @post = Post.find_by_slug(params[:post_id])
-    @comment = @post.comments.create(params[:comment])
-    @comment.ip = request.env['REMOTE_ADDR']
-      if @comment.save
-        respond_to do |format|
-          format.js
+    if params[:custom].empty?
+      @comment = @post.comments.create(params[:comment])
+      @comment.ip = request.env['REMOTE_ADDR']
+        if @comment.save
+          respond_to do |format|
+            format.js
+          end
+        else
+          redirect_to @post
         end
-      else 
-        redirect_to @post
-      end
+    else
+      redirect_to @post
+    end
   end
 
   # PUT /comments/1

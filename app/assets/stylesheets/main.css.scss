@@ -40,7 +40,6 @@ body{
 }
 .slogan{
   margin-top: 5px;
-  margin-left:120px;
   font-weight: bold;
 }
 .container{
@@ -393,7 +392,7 @@ h1 {
       text-decoration: underline
     }
   }
-  
+
 }
 
 .post-form {
@@ -508,4 +507,8 @@ h1 {
     line-height: 1.4;
     color: #353535;
   }
+}
+
+.custom {
+  display: none;
 }

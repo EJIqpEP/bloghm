@@ -123,6 +123,7 @@ GEM
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
     metamagic (2.0.4)
+    method_source (0.8.2)
     mime-types (1.19)
     mini_magick (3.4)
       subexec (~> 0.2.1)
@@ -141,6 +142,12 @@ GEM
       activerecord (~> 3.0)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     pygments.rb (0.3.7)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -203,6 +210,7 @@ GEM
     simple_form (2.0.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    slop (3.4.6)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -260,6 +268,7 @@ DEPENDENCIES
   mini_magick
   nokogiri
   pg
+  pry-rails
   pygments.rb
   rails (= 3.2.10)
   rb-fsevent
