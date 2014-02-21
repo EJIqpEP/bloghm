@@ -21,6 +21,7 @@ gem 'metamagic'
 gem 'active_attr'
 gem 'client_side_validations'
 gem 'rb-fsevent'
+gem 'disqus'
 
 group :development do
   gem 'thin'

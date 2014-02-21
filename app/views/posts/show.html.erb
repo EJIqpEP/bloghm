@@ -19,26 +19,8 @@
 <div class = "content"><%= markdown(@post.body) %></div>
 
 
-<div class = "comments">
-  <% if (@post.comments.any?) %>
-    <h2>Комментарии</h2>
-    <% @post.comments.each_with_index do |comment, index| %>
-      <div class = "comment" id = "comment-<%= index+1 %>">
-        <div class = "gravatar"><%= gravatar_for comment.email %></div>
-        <div class = "number"><%= link_to "##{index+1}", post_path(@post, :anchor => "comment-#{index+1}") %></div>
-        <div class = "comment-author"><%= comment.name  %></div>
-        <div class = "comment-date"><%= comment.created_at.strftime('%d.%m.%y в %H:%M') %></div>
-        <% if signed_in? %>
-          <div class = "edit-comment">
-            <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-            <%= link_to "Delete", post_comment_path(@post, comment), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-          </div>
-        <% end %>
-        <div class = "comment-text"><%= comment.content %></div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-<%= render 'comments/form' %>
-
 <%= render "shared/sidebar" %>
+
+<div id ="disqus_thread">
+  <%= disqus_thread.html_safe %>
+</div>
