@@ -1,10 +1,10 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-server "vq12server", :web, :app, :db, primary: true
+server "do", :web, :app, :db, primary: true
 
-set :rvm_ruby_string, '1.9.3'
-set :rvm_type, :system
+set :rvm_ruby_string, '2.1.5'
+set :rvm_type, :user
 set :application, "elcoding"
 set :user, "ejiqpep"
 set :deploy_to, "/home/sites/elcoding.com/www/"
@@ -13,7 +13,7 @@ set :use_sudo, false
 set :shared_children, shared_children + %w{public/uploads}
 
 set :scm, "git"
-set :repository, "git@github.com:EJIqpEP/bloghm.git"
+set :repository, "https://github.com/EJIqpEP/bloghm.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
